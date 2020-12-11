@@ -16,12 +16,15 @@ public class Appconfig {
 
     @Bean
     public MemberService memberService(){
+        //1번
+        System.out.println("Call Appconfig.memberService");
         return new MemberServiceImpl(memberRepository());
-
     }
 
     @Bean
     public OrderService orderService(){
+        //2번
+        System.out.println("Call Appconfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
@@ -34,6 +37,8 @@ public class Appconfig {
 
     @Bean
     public MemberRepository memberRepository() {
+        //3번
+        System.out.println("Call Appconfig.memberRepository");
         return new MemoryMemberRespository();
     }
 
