@@ -26,4 +26,17 @@ public class OrderServiceTest {
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
 
     }
+
+    /*필드에 직접 주입하게 된 경우 사용자가 원하는 값으로 변경하기 불가능
+    * 아래 Runtime 시 에러가 발생하는 이유는 스프링 빈을 생성하지 않은 채 직접 실행시키기 때문에
+    * 해당 Repository = null 로 발생
+    * 가급적이면 사용하지 말자!
+    *
+    * */
+   /* @Test
+    void filedInjection(){
+        OrderServiceImpl orderService = new OrderServiceImpl();
+        orderService.createOrder(1L, "iTemA", 10000);
+
+    }*/
 }
